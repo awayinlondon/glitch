@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Title</title>
+		<link rel="stylesheet" href="styles.css">
+
+
+	</head>
+	<body>
+		<!-- <damien-header></damien-header>
+    <ul id="my-list">
+      
+    </ul> -->
+    <template id="template-list-item">
+      <li><span class="datetimestamp"></span>: <span class="logentry"></span></li>
+    </template>
+    
+    <!-- BUTTON TEMPLATE --> 
+    <template id='template-button'>
+      <button id="click-me">Log click event</button>
+      <style>
+        #click-me {
+          all: unset;
+          background: tomato;
+          border: 0;
+          border-radius: 4px;
+          color: white;
+          font-family: Helvetica;
+          font-size: 1.5rem;
+          padding: .5rem 1rem;
+          width: 325px;
+          height: 325px;
+        }
+      </style>
+      <script>
+        console.log('entering template-button script');
+        const button = document.getElementById('click-me');
+        button.addEventListener('click', event => alert('hello'));
+      </script>
+    </template>
+    <!-- END BUTTON TEMPLATE -->
+    
+    <!-- BEGIN CARD TEMPLATE -->
+    <template id="template-card">
+      <div class="inner-wrapper">
+        
+      </div>
+      <script>
+        
+      </script>
+      <style>
+        /* The :host CSS pseudo-class selects the shadow host of the shadow DOM containing the CSS it is used inside — in other words, this allows you to select a custom element from inside its shadow DOM. */
+        :host {
+          background-color: rgb(255,255,255,.55);
+          box-shadow: 0 10px 20px rgba(0,0,0,19), 0 6px 6px rgba(0,0,0,0.23);
+          position: relative;
+          display: inline-block;
+          color: red;
+          height: 315px;
+          width: 315px;
+          margin: 10px;
+          padding: 15px;
+        }
+        .inner-wrapper {
+          display: grid;
+          grid-template-rows: 1vh;
+          margin: 10px;
+          padding: 15px;
+          background-color: blue;
+          
+        }
+      </style>
+    </template>
+    <!-- END CARD TEMPLATE -->
+    
+    
+    
+    <script src="./scripts.js"></script>
+  
+    <div class="deck">
+      <damiens-card id="myCard">myCard Text</damiens-card>      
+      <damiens-card id="myCard2">myCard Text 2</damiens-card>
+      <damiens-card id="myCard3">myCard Text 3</damiens-card>
+      <damiens-card id="myCard4">myCard Text 4</damiens-card>
+      <damiens-card id="myCard5">myCard Text 5</damiens-card>
+    </div>
+    
+    <style>
+      .box {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    </style>
+
+  </body>
+	
+  
+  
+</html>
+
+<!-- https://css-tricks.com/an-introduction-to-web-components/ -->
+<!-- https://developers.google.com/web/fundamentals/web-components/customelements -->
+<!-- https://grid.layoutit.com/ -- use this to create a grid box layout template! -->

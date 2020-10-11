@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>06-07</title>
+		<link rel="stylesheet" href="styles.css">
+		<script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="cards">
+            	<div class="card" id="card-drag-drop">
+					<!-- <img src="./dragDrop.png" class="card-image" alt=""></img> -->
+					<div id="drop-area" >
+						<input type="file" id="file-selector" class="inputfile" />
+						<label for="file-selector">
+							<img src="dragDrop.png" class="card-image" />
+						</label>	
+					</div>
+				</div>
+				<div class="card"><ol id='file-list'></ol></div>
+				<div class="card"><img src="./512x512bb.png" class="card-image" /></div>
+				<div class="card" id="card-test">
+					<div id="div-top"></div>
+					<div id="div-main"></div>
+					<div id="div-left"></div>
+					<div id="div-right"></div>
+					<div id="div-bottom"></div>
+				</div>
+				<div class="card"></div>
+				<div class="card"></div>
+			</div>
+		</div>
+		<script src="scripts.js"></script>
+	</body>
+	
+</html>
+
+
+<!-- square: https://dev.to/tchaflich/a-width-responsive-perfect-square-in-pure-css-3dao -->
+<!-- square: https://mastery.games/post/tile-layouts/ --> 
+<!-- square: https://css-tricks.com/a-grid-of-logos-in-squares/ -->
+<!-- https://www.smashingmagazine.com/2013/09/responsive-images-performance-problem-case-study/ -->

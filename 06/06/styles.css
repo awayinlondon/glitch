@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+.cards {
+    display: grid;
+/*    grid-template-columns: repeat(auto-fill, minmax(375px, 1fr)); */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+} 
+
+.card {
+    background-color: yellow;
+}
+
+.card {
+    /* card look & feel */
+    background-color: white; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);      
+    /* card square */
+    position: relative;
+    padding-bottom: 100%; /* allows place stuff inside the container without affecting the padding */
+    height: 0;
+    overflow: hidden;
+}
+
+
+.card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* background, transparency etc */
+
+html {
+    background:
+        repeating-linear-gradient(190deg, rgba(255, 0, 0, 0.5) 40px,
+          rgba(255, 153, 0, 0.5) 80px, rgba(255, 255, 0, 0.5) 120px,
+          rgba(0, 255, 0, 0.5) 160px, rgba(0, 0, 255, 0.5) 200px,
+          rgba(75, 0, 130, 0.5) 240px, rgba(238, 130, 238, 0.5) 280px,
+          rgba(255, 0, 0, 0.5) 300px),
+        repeating-linear-gradient(-190deg, rgba(255, 0, 0, 0.5) 30px,
+          rgba(255, 153, 0, 0.5) 60px, rgba(255, 255, 0, 0.5) 90px,
+          rgba(0, 255, 0, 0.5) 120px, rgba(0, 0, 255, 0.5) 150px,
+          rgba(75, 0, 130, 0.5) 180px, rgba(238, 130, 238, 0.5) 210px,
+          rgba(255, 0, 0, 0.5) 230px),
+        repeating-linear-gradient(23deg, red 50px, orange 100px,
+          yellow 150px, green 200px, blue 250px,
+          indigo 300px, violet 350px, red 370px);
+}
+
+.main {
+    background-color: rgb(255,255,255, .7);
+}
+
+.card {
+    background-color: rgb(255,255,255,.65);
+}
+

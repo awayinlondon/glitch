@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.small, .medium-landscape, .icons, .medium-portrait, .medium-full {
+  display: none;
+}
+
+@media screen and (max-width: 920px) {
+  .window-grid {
+    display: grid;
+    grid-template-columns: 1fr 640px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "left-spacer dashboard-grid right-spacer";
+    background-color: black;
+  }
+
+  .left-spacer {
+    grid-area: left-spacer;
+    background-color: white;
+  }
+  .right-spacer {
+    grid-area: right-spacer;
+    background-color: white;
+  }
+
+  .dashboard-grid {
+    grid-area: dashboard-grid;
+    background-color: red;
+    display: grid;
+  }
+
+  body {
+    background-color: orange;
+  }
+
+}  
+
+
+@media screen and (max-width: 639px) {
+  .window-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "left-spacer dashboard-grid right-spacer";
+    background-color: black;
+  }
+
+  .left-spacer {
+    grid-area: left-spacer;
+    background-color: white;
+  }
+  .right-spacer {
+    grid-area: right-spacer;
+    background-color: white;
+  }
+
+  .dashboard-grid {
+    grid-area: dashboard-grid;
+    background-color: red;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 320px 320px 320px 320px;
+    grid-template-areas: 
+      "small"
+      "icons"
+      "medium-portrait"
+      "medium-portrait";
+    background-color: brown;
+    padding: 20px;
+    row-gap: 20px;
+    /*justify-items: center;*/
+  }
+  
+  
+  .small {
+    grid-area: small;
+    background-color: black;
+    display: inline;
+  }
+  
+  .icons {
+    grid-area: icons;
+    /*background-color: pink; */
+    display: grid;
+    row-gap: 20px;
+    column-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+      "icon1 icon2 icon3"
+      "icon4 icon5 icon6"
+      "icon7 icon8 icon9";
+  }
+  /*.icon {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }*/
+  
+  #icon1 {
+    grid-area: icon1;
+    background-color: red;
+  }
+  #icon2 {
+    grid-area: icon2;
+    background-color: orange;
+  }
+  #icon3 {
+    grid-area: icon3;
+    background-color: yellow;
+  }
+  #icon4 {
+    grid-area: icon4;
+    background-color: green;
+  }
+  #icon5 {
+    grid-area: icon5;
+    background-color: blue;
+  }
+  #icon6 {
+    grid-area: icon6;
+    background-color: indigo; 
+  }
+  #icon7 {
+    grid-area: icon7;
+    background-color: violet;
+  }
+  #icon8 {
+    grid-area: icon8;
+    background-color: black;
+  }
+  #icon9 {
+    grid-area: icon9;
+    background-color: white;
+  }
+  
+  
+  .medium-portrait {
+    grid-area: medium-portrait;
+    background-color: grey;
+    display: inline;
+  }
+
+  body {
+    background-color: orange;
+  }
+
+}  
+
+
+/*
+.blank1 {
+  grid-area: blank1;
+  background-color: white;
+}
+.blank {
+  grid-area: blank;
+  background-color: white;
+}
+.small {
+  grid-area: small;
+  background-color: black;
+}
+.icons {
+  grid-area: icons;
+  background-color: pink;
+}
+.medium-portrait {
+  grid-area: medium-portait;
+  background-color: grey;
+}
+.blank2 {
+  grid-area: blank2;
+  background-color: white;
+}
+.medium-landscape {
+  grid-area: medium-landscape;
+  background-color: navy;
+}
+.medium-full {
+  grid-area: medium-landscape;
+  background-color: darkblue;
+}
+.medium-full {
+  grid-area: medium-full;
+  background-color: beige;
+}
+
+@media screen and (max-width: 2240px) {
+  body {
+    background-color: violet;
+  }
+}
+@media screen and (max-width: 1919px) {
+  body {
+    background-color: indigo;
+  }
+}
+@media screen and (max-width: 1599px) {
+  body {
+    background-color: blue;
+  }
+}
+@media screen and (max-width: 1279px) {
+  body {
+    background-color: green;
+  }
+}
+@media screen and (max-width: 959px) {
+  body {
+    background-color: yellow;
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 320px 320px 1fr;
+    grid-template-rows: 320px 320px 320px 320px 320px;
+    grid-template-areas: 
+      "blank1 medium-landscape medium-landscape blank2"
+      "blank1 medium-portrait small blank2"
+      "blank1 medium-portrait icons blank2"
+      "blank1 medium-full medium-full blank2"
+      "blank1 medium-full medium-full blank2";
+    background-color: brown;
+  }
+}
+@media screen and (max-width: 639px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 320px 1fr;
+    grid-template-rows: 320px 320px 320px 320px;
+    grid-template-areas: 
+      "blank1 small blank2"
+      "blank1 icons blank2"
+      "blank1 medium-portait blank2"
+      "blank1 medium-portait blank2";
+    background-color: brown;
+  }
+
+  body {
+    background-color: orange;
+  }
+  
+  .medium-landscape {
+    display: none;
+  }
+  .medium-full {
+    display: none;
+  }
+}  
+
+@media screen and (max-width: 319px) {
+  body {
+    background-color: red;
+  }
+}
+
+*/
+
+

@@ -1,0 +1,22 @@
+#drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    height: 512px;
+    width: 512px;
+    font-family: sans-serif;
+    margin: 100px auto;
+    padding: 20px;
+}
+
+#drop-area.highlight {
+    border-color: purple;
+}
+  
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Title</title>
+		<link rel="stylesheet" href="styles.css">
+      		<!-- Include Dexie -->
+			  <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+	</head>
+	<body>
+		<div id='buttons'>
+			<button onClick = "createDatabase()">Create Database</button>
+			<button onClick = "listDatabases()">List Databases</button>
+			<button onClick = "deleteDatabase()">Delete Databases</button>
+			<button onClick = "addEntries()">Add Data to Database</button>
+			<button onclick = "readEntries()">Read Data from Database</button>
+			<button onclick = "deleteEntries()">Delete Data from Database</button>
+			<input type="file" id="file-selector" multiple size="24" />
+		</div>
+		<div id='textbox'>
+			<ul id='log-box'>
+
+			</ul>
+		</div>
+		<script src='./scripts.js'></script>
+	</body>
+</html>
+<!-- https://dexie.org/docs/Tutorial/Design -->
+

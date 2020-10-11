@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Indexed DB Test</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<div id='buttons'>
+			<button onClick = "createDatabase()">Create DB</button>
+			<button onClick = "listDatabases()">List DBs</button>
+			<button onClick = "deleteDatabase()">Delete DB</button>
+			<button onClick = "addEntries()">Add Data</button>
+			<button onclick = "readEntries()">Read Data</button>
+			<button onclick = "deleteEntries()">Delete Data </button>
+			<input type="file" id="fileSelector" multiple size="24">
+		</div>
+		<div id='textbox'></div>
+		<script src="scripts.js"></script>
+	</body>	
+</html>
+

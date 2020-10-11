@@ -1,0 +1,98 @@
+/* CSS Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fixed Pixel Screen Size for Screen-Grid */
+
+.screen-grid {
+    display: grid;
+    /*grid-template-columns: 1fr 1fr 1fr;*/
+    grid-template-rows: 320px 320px 320px 320px;
+    grid-template-areas: 
+        "left-spacer dashboard-grid right-spacer"
+        "left-spacer dashboard-grid right-spacer"
+        "left-spacer dashboard-grid right-spacer"
+        "left-spacer dashboard-grid right-spacer";
+}
+
+#left-spacer {
+    grid-area: left-spacer;
+}
+
+#right-spacer {
+    grid-area: right-spacer;
+}
+
+.spacer {
+    background-color: rgb(255, 255, 255, 0.9);
+}
+
+.dashboard-grid {
+    grid-area: dashboard-grid;
+    background-color: rgb(0, 128, 255, 0.5);
+}
+
+@media screen and (min-width: 1920px) {
+    body {
+        background-color: deeppink;
+    }
+    .dashboard-grid {
+        grid-template-columns: 1fr 1920px 1fr;
+    }
+}
+
+@media screen and (max-width: 1919px) {
+    body {
+        background-color: indigo;
+    }
+    .screen-grid {
+        grid-template-columns: 1fr 1600px 1fr;
+    }
+}
+
+@media screen and (max-width: 1599px) {
+    body {
+        background-color: blue;
+    }
+    .screen-grid {
+        grid-template-columns: auto 1280px auto;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    body {
+        background-color: green;
+    }
+    .screen-grid {
+        grid-template-columns: auto 960px auto;
+    }
+}
+
+@media screen and (max-width: 959px) {
+    body {
+        background-color: yellow;
+    }   
+    .screen-grid {
+        grid-template-columns: auto 640px auto;
+    }
+}
+
+@media screen and (max-width: 639px) {
+    body {
+        background-color: orange;
+    }
+    .screen-grid {
+        grid-template-columns: auto 320px auto;
+    }
+}
+
+
+@media screen and (max-width: 319px) {
+    body {
+        background-color: red;
+    }
+}

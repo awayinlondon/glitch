@@ -1,0 +1,84 @@
+/* mobile-first portrait grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 50px 50px 1fr 50px;
+    grid-template-areas:
+        'header'
+        'nav'
+        'aside'
+        'main'
+        'footer';
+    height: 100vh;
+}
+
+/* medium (i.e. mobile landscape */
+@media only screen and (orientation: portrait) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px 50px 50px 1fr 50px;
+        grid-template-areas:
+            'header'
+            'nav'
+            'aside'
+            'main'
+            'footer';
+    }
+}
+
+/* medium (i.e. mobile landscape */
+@media only screen and (orientation: landscape) {
+    .grid-container {
+        grid-template-columns: 240px 1fr;
+        grid-template-rows: 50px 50px 1fr 50px;
+        grid-template-areas: 
+            'aside header'
+            'aside nav'
+            'aside main'
+            'aside footer'
+    }
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    background-color: #540D6E;
+}
+
+nav {
+    grid-area: nav;
+    background-color: #EE4266;
+}
+
+aside {
+    grid-area: aside;
+    /* display: flex;  */
+    /* flex-direction: column;  */
+    /* height: 100%;  */
+    /* width: 240px; */
+    /* position: fixed; */
+    /* overflow-y: auto; */
+    /* transform: translateX(-245px,0,0); added in additional y and z dimensions to resolve issue with iOS */
+    /* transition: all .6s ease-in-out; */
+    /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08); */
+    /* z-index: 2; Needs to sit above the hamburger menu icon */
+    background-color: #3BCEAC;
+}
+
+main {
+    grid-area: main;
+    background-color: #FFD23F;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    background-color: #0EAD69;
+}
+
