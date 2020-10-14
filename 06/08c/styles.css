@@ -1,0 +1,217 @@
+/* CSS Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fixed Pixel Screen Size for Screen-Grid */
+
+.screen-grid {
+  display: grid;
+  /*grid-template-columns: 1fr 1fr 1fr;*/
+  grid-template-rows: 3000px;
+  grid-template-areas:
+    /*"left-spacer dashboard-grid right-spacer"
+    "left-spacer dashboard-grid right-spacer"
+    "left-spacer dashboard-grid right-spacer" */
+    "left-spacer dashboard-grid right-spacer";
+}
+
+#left-spacer {
+  grid-area: left-spacer;
+}
+
+#right-spacer {
+  grid-area: right-spacer;
+}
+
+.spacer {
+  background-color: rgb(255, 255, 255, 0.9);
+}
+
+.dashboard-grid {
+  grid-area: dashboard-grid;
+  background-color: rgb(0, 128, 255, 0.5);
+}
+
+@media screen and (min-width: 1920px) {
+  body {
+    background-color: deeppink;
+  }
+  .screen-grid {
+    grid-template-columns: 1fr 1920px 1fr;
+  }
+}
+
+@media screen and (max-width: 1919px) {
+  body {
+    background-color: indigo;
+  }
+  .screen-grid {
+    grid-template-columns: 1fr 1600px 1fr;
+  }
+}
+
+@media screen and (max-width: 1599px) {
+  body {
+    background-color: blue;
+  }
+  .screen-grid {
+    grid-template-columns: auto 1280px auto;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  body {
+    background-color: green;
+  }
+  .screen-grid {
+    grid-template-columns: auto 960px auto;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  body {
+    background-color: yellow;
+  }
+  .screen-grid {
+    grid-template-columns: auto 640px auto;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  body {
+    background-color: orange;
+  }
+  .screen-grid {
+    grid-template-columns: auto 320px auto;
+  }
+}
+
+@media screen and (max-width: 319px) {
+  body {
+    background-color: red;
+  }
+}
+
+/* Dashboard Grid */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 320px);
+  grid-template-rows: repeat(99, 320px);
+  grid-auto-flow: row dense; /* automatically shift content into any gaps! By column so lose source order */
+  grid-gap: 20px; /* shorthand for row-gap and column-gap  */
+  padding: 20px;
+  /* margin: 0 auto; */
+}
+
+@media screen and (min-width: 320px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (min-width: 640px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 920px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (min-width: 1600px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media screen and (min-width: 1920px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* Card Sizes */
+
+.small-card     { grid-column: span 1; grid-row: span 1; }
+.portrait-card  { grid-column: span 1; grid-row: span 2; }
+.landscape-card { grid-column: span 2; grid-row: span 1; }
+.medium-card    { grid-column: span 2; grid-row: span 2; }
+
+
+/* Exclude larger cards that won't fit when the number of columns (i.e. column width) is too restrictive */
+
+@media screen and (max-width: 639px) {
+  .landscape-card,
+  .medium-card {
+    display: none;
+  }
+}
+
+/* Individual Card Styling */
+
+.card {
+  background-color: rgb(255, 255, 255, 0.55);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Icons */
+
+.icon-grid      { grid-column: span 1; grid-row: span 1; }
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 20px; /* shorthand for row-gap and column-gap  */
+  /* padding: 20px; */
+  grid-template-areas: 
+    "icon1 icon2 icon3"
+    "icon4 icon5 icon6"
+    "icon7 icon8 icon9";
+}
+
+.icon1 { 
+  grid-area: icon1;
+  background-color: red;
+}
+.icon2 { grid-area: icon2; background-color: orange; opacity: 0.8; }
+.icon3 { grid-area: icon3; background-color: yellow; opacity: 0.8; }
+.icon4 { grid-area: icon4; background-color: green;  opacity: 0.8; }
+.icon5 { grid-area: icon5; background-color: blue; }
+.icon6 { grid-area: icon6; background-color: indigo; }
+.icon7 { grid-area: icon7; background-color: violet; }
+.icon8 { grid-area: icon8; background-color: grey; }
+.icon9 { grid-area: icon9; background-color: white; }
+
+
+.tiny-grid { 
+  /* size of 'parent' grid item */
+  grid-column: span 1; 
+  grid-row: span 1; 
+  /* tiny grid */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 20px;
+  grid-template-areas: 
+    "tiny1 tiny2"
+    "tiny3 tiny4";
+}
+
+.tiny1 { grid-area: tiny1; opacity: 0.7; background-color: red; }
+.tiny2 { grid-area: tiny2; opacity: 0.7; background-color: orange; }
+.tiny3 { grid-area: tiny3; opacity: 0.7; background-color: yellow; }
+.tiny4 { grid-area: tiny4; opacity: 0.7; background-color: green; }
+
